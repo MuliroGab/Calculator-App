@@ -18,6 +18,18 @@ Este é um simples aplicativo de calculadora desenvolvido em React Native.
 # Instalação
 
 1. **Clone o repositório:**
-   ```bash
+   Escolha uma pasta para colocar o comando abaixo no terminal do VsCode
    git clone https://github.com/seu-usuario/react-native-calculator.git
-   cd react-native-calculator
+   cd Calculator-App
+
+2. **Instale as dependências:**
+   npm install
+   npm install -g expo-cli (Caso não tenha instalado o Expo CLI globalmente)
+
+# Execução
+   npx expo start
+   npx expo start --tunnel (Caso o primeiro não funcione)
+   Será gerado um Qrcode no terminal do Vscode, abra o app do Expo Go para ler o Qrcode ou use o link gerado no terminal para acessar no navegador. http://localhost:8081 
+
+
+

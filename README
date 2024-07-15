@@ -17,7 +17,7 @@ Este é um simples aplicativo de calculadora desenvolvido em React Native.
 
 # Instalação
 
-1. **Clone o repositório:**
+1. **Clone o repositório(Caso não tenha os arquivos):**
    Escolha uma pasta para clonar o repositório, depois coloque o comando abaixo no terminal do VsCode.
    git clone https://github.com/MuliroGab/Calculator-App.git
    cd Calculator-App

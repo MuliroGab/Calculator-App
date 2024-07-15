@@ -30,6 +30,3 @@ Este é um simples aplicativo de calculadora desenvolvido em React Native.
    Execute o codigo abaixo para iniciar a aplicação
    npx expo start --tunnel (Caso não funcione de primeira, tente outra vez)
    Será gerado um Qrcode no terminal do Vscode, abra o app do Expo Go para ler o Qrcode ou use o link gerado no terminal para acessar no navegador(http://localhost:8081).
-
-
-

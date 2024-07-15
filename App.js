@@ -1,32 +1,39 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Platform, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
-const screen = Dimensions.get('window');
-
+// Componente principal do aplicativo
 export default function App() {
+  // Definindo os estados para o display da calculadora e para o controle dos parênteses
   const [display, setDisplay] = useState('');
   const [parenthesis, setParenthesis] = useState('(');
 
+  // Função para lidar com a entrada de valores
   const handlePress = (value) => {
     setDisplay(display + value);
   };
 
+  // Função para limpar o display
   const handleClear = () => {
     setDisplay('');
   };
 
+  // Função para calcular o resultado da expressão no display
   const handleEqual = () => {
     try {
+      // Usando eval para calcular a expressão, substituindo 'x' por '*'
       setDisplay(eval(display.replace('x', '*')).toString());
     } catch (e) {
+      // Tratamento de erro caso a expressão seja inválida
       setDisplay('Erro');
     }
   };
 
+  // Função para apagar o último caractere do display
   const handleDelete = () => {
     setDisplay(display.slice(0, -1));
   };
 
+  // Função para calcular a porcentagem do valor no display
   const handlePercent = () => {
     try {
       setDisplay((parseFloat(display) / 100).toString());
@@ -35,18 +42,25 @@ export default function App() {
     }
   };
 
+  // Função para alternar e adicionar parênteses no display
   const handleParenthesis = () => {
     setDisplay(display + parenthesis);
     setParenthesis(parenthesis === '(' ? ')' : '(');
   };
 
   return (
+    // Estrutura principal do layout da calculadora
+    /* A estrutura da calculadora foi baseada nas já existentes, com apenas poucas diferenças de espaçamento e coloração. Existem espaços que ainda podem ser utilizados no futuro para adicionar funcionalidades que estão faltando. */
     <View style={styles.container}>
+      {/* Área do display */}
       <View style={styles.display}>
         <Text style={styles.displayText}>{display}</Text>
       </View>
+      {/* Área dos botões */}
       <View style={styles.buttons}>
+        {/* Linha de botões */}
         <View style={styles.row}>
+          {/* Botões */}
           <Button title="C" onPress={handleClear} style={styles.clearButton} />
           <Button title="()" onPress={handleParenthesis} style={styles.funcButton} />
           <Button title="%" onPress={handlePercent} style={styles.funcButton} />
@@ -81,12 +95,16 @@ export default function App() {
   );
 }
 
+// Componente de botão reutilizável
 const Button = ({ title, onPress, style }) => (
   <TouchableOpacity onPress={onPress} style={[styles.button, style]}>
     <Text style={styles.buttonText}>{title}</Text>
   </TouchableOpacity>
 );
 
+// Estilos para o aplicativo
+/* O layout utiliza flex para distribuir o espaço entre o display e os botões, deixando a interface mais limpa e responsiva.
+   As cores utilizadas na interface não são muito chamativas para evitar a perda de foco do usuário.*/
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -99,7 +117,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'flex-end',
     paddingHorizontal: 10,
-    borderRadius: 25,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
   },
   displayText: {
     color: '#333',
@@ -119,7 +138,7 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
     paddingVertical: 20,
     margin: 5,
@@ -128,7 +147,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#333',
-    fontSize: Platform.OS === 'ios' ? screen.width * 0.1 : screen.width * 0.08,
+    fontSize: 30,
   },
   funcButton: {
     backgroundColor: '#9fc1e8',

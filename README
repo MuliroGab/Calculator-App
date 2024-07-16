@@ -1,32 +1,42 @@
 # React Native Calculator App
 
+
 Este é um simples aplicativo de calculadora desenvolvido em React Native.
 
+
 # Funcionalidades
+
 
 - Operações básicas de adição, subtração, multiplicação e divisão
 - Cálculo de porcentagens
 - Uso de parênteses para operações
 - Limpar e deletar entradas
 
+
 # Pré-requisitos
 
+
 - Node.js
-- VScode 
-- Expo Go 
+- VScode
+- Expo Go
+
 
 # Instalação
 
-1. **Clone o repositório(Caso não tenha os arquivos):**
-   Escolha uma pasta para clonar o repositório, depois coloque o comando abaixo no terminal do VsCode.
-   git clone https://github.com/MuliroGab/Calculator-App.git
-   cd Calculator-App
+
+1. **Clone o repositório:**
+  Escolha uma pasta para clonar o repositório, depois execute os comandos abaixo no terminal do Vscode.
+  1. git clone https://github.com/MuliroGab/Calculator-App.git
+  2. cd Calculator-App
+
 
 2. **Instale as dependências:**
-   npm install
-   npm install -g expo-cli (Caso não tenha instalado o Expo CLI globalmente)
+  Use o comando abaixo para instalar todas as dependências necessárias para executar a aplicação.
+  npm install
+
 
 # Execução
-   Execute o codigo abaixo para iniciar a aplicação
-   npx expo start --tunnel (Caso não funcione de primeira, tente outra vez)
-   Será gerado um Qrcode no terminal do Vscode, abra o app do Expo Go para ler o Qrcode ou use o link gerado no terminal para acessar no navegador(http://localhost:8081).
+  Execute o comando abaixo no terminal do Vscode para iniciar a aplicação
+  npx expo start
+  npx expo start --tunnel (Caso a conexão com o aplicativo do Expo Go não funcione, utilize esse comando para resolver o problema)
+  Será gerado um Qrcode no terminal do Vscode, abra o app do Expo Go para ler o Qrcode ou use o link para acessar no navegador(http://localhost:8081).

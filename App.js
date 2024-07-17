@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions} from 'react-native';
+const { height, width } = Dimensions.get('window');
+
 
 // Componente principal do aplicativo
 export default function App() {
@@ -105,54 +107,57 @@ const Button = ({ title, onPress, style }) => (
 // Estilos para o aplicativo
 /* O layout utiliza flex para distribuir o espaço entre o display e os botões, deixando a interface mais limpa e responsiva.
    As cores utilizadas na interface não são muito chamativas para evitar a perda de foco do usuário.*/
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#DCDCDC',
-  },
-  display: {
-    flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'flex-end',
-    paddingHorizontal: 10,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
-  },
-  displayText: {
-    color: '#333',
-    fontSize: 40,
-    padding: 20,
-  },
-  buttons: {
-    flex: 3,
-    justifyContent: 'center',
-    paddingHorizontal: 10,
-    marginTop: 20,
-  },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '100%',
-  },
-  button: {
-    flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    paddingVertical: 20,
-    margin: 5,
-    backgroundColor: '#fff',
-    borderRadius: 10,
-  },
-  buttonText: {
-    color: '#333',
-    fontSize: 30,
-  },
-  funcButton: {
-    backgroundColor: '#9fc1e8',
-  },
-  clearButton: {
-    backgroundColor: '#ee5d5f',
-  },
-});
+   const styles = StyleSheet.create({
+    container: {
+      flexGrow: 1,
+      flexShrink: 1,
+      justifyContent: 'center',
+      backgroundColor: '#DCDCDC',
+    },
+    display: {
+      flexGrow: 1,
+      flexShrink: 1,
+      backgroundColor: '#fff',
+      justifyContent: 'center',
+      alignItems: 'flex-end',
+      paddingHorizontal: 10,
+    },
+    displayText: {
+      color: '#333',
+      fontSize: height < 600 ? 20 : 30,
+      padding: 20,
+    },
+    buttons: {
+      flexGrow: 1,
+      flexShrink: 1,
+      justifyContent: 'center',
+      paddingHorizontal: 10,
+    },
+    row: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      width: '100%',
+    },
+    button: {
+      flexGrow: 1,
+      flexShrink: 1,
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      margin: 5,
+      width: '100%',
+      maxWidth: 90,
+      backgroundColor: '#fff',
+      borderRadius: 10,
+    },
+    buttonText: {
+      color: '#333',
+      fontSize: height < 600 ? 25 : height * 0.08,
+    },
+    funcButton: {
+      backgroundColor: '#9fc1e8',
+    },
+    clearButton: {
+      backgroundColor: '#ee5d5f',
+    },
+   });
+   

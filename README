@@ -43,5 +43,5 @@ Este é um simples aplicativo de calculadora desenvolvido em React Native.
   Será gerado um Qrcode no terminal do Vscode, abra o app do Expo Go para ler o Qrcode ou use o link para acessar no navegador(http://localhost:8081).
 
 # Teste
-   Use a extensão do navegador Mobile Simulator para testar a responsividade da aplicação em diversos dispositivos.
+   Use a extensão Mobile Simulator no seu navegador para testar a responsividade da aplicação em diversos dispositivos.
    Link da extensão: https://chromewebstore.google.com/detail/mobile-simulator-responsi/ckejmhbmlajgoklhgbapkiccekfoccmk?pli=1

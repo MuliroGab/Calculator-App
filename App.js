@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions} from 'react-native';
-const { height, width } = Dimensions.get('window');
+const { height } = Dimensions.get('window');
 
 
 // Componente principal do aplicativo
@@ -89,7 +89,7 @@ export default function App() {
         <View style={styles.row}>
           <Button title="." onPress={() => handlePress('.')} />
           <Button title="0" onPress={() => handlePress('0')} />
-          <Button title="⌫" onPress={handleDelete} />
+          <Button title="⌫" onPress={handleDelete} style={styles.deleteButton} />
           <Button title="=" onPress={handleEqual} style={styles.funcButton} />
         </View>
       </View>
@@ -106,7 +106,8 @@ const Button = ({ title, onPress, style }) => (
 
 // Estilos para o aplicativo
 /* O layout utiliza flex para distribuir o espaço entre o display e os botões, deixando a interface mais limpa e responsiva.
-   As cores utilizadas na interface não são muito chamativas para evitar a perda de foco do usuário.*/
+   As cores utilizadas na interface não são muito chamativas para evitar a perda de foco do usuário.
+   A fonte escolhida foi a Arial, ela é bem clara e legível, então é uma otima escolha para uma calculadora. */
    const styles = StyleSheet.create({
     container: {
       flexGrow: 1,
@@ -124,8 +125,9 @@ const Button = ({ title, onPress, style }) => (
     },
     displayText: {
       color: '#333',
-      fontSize: height < 600 ? 20 : 30,
+      fontSize: height < 600 ? 24 : height * 0.06,
       padding: 20,
+      fontFamily: 'Arial',
     },
     buttons: {
       flexGrow: 1,
@@ -145,13 +147,15 @@ const Button = ({ title, onPress, style }) => (
       alignItems: 'center',
       margin: 5,
       width: '100%',
-      maxWidth: 90,
+      maxWidth: 93,
+      paddingHorizontal: 10,
       backgroundColor: '#fff',
       borderRadius: 10,
     },
     buttonText: {
       color: '#333',
-      fontSize: height < 600 ? 25 : height * 0.08,
+      fontSize: height < 600 ? 23 : height * 0.06,
+      fontFamily: 'Arial',
     },
     funcButton: {
       backgroundColor: '#9fc1e8',
